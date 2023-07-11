@@ -1,4 +1,8 @@
 # 快速排序
+from random import randrange
+import time
+
+
 def quickSort(alist, start, end):
     if start >= end:  # 递归退出条件
         return
@@ -25,6 +29,9 @@ def quickSort(alist, start, end):
 
 
 if __name__ == '__main__':
-    a = [4, 1, 6, 2, 88, 3, 24, 53]
+    a = [randrange(1000000) for i in range(1000000)]
+    start = time.time()
     quickSort(a, 0, len(a)-1)
+    end = time.time()
     print(a)
+    print(end - start)

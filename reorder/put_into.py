@@ -1,3 +1,7 @@
+from random import randrange
+import time
+
+
 def insertionSort(arr):
     for i in range(len(arr)):
         preIndex = i - 1
@@ -10,5 +14,8 @@ def insertionSort(arr):
 
 
 if __name__ == '__main__':
-    a = [4, 1, 6, 2, 88, 3, 24, 53]
+    a = [randrange(1000000) for i in range(1000000)]
+    start = time.time()
     print(insertionSort(a))
+    end = time.time()
+    print(end - start)
