@@ -2,6 +2,7 @@
 
 def heap_sort(array):
     first = len(array) // 2 - 1
+    dic = {}
     for start in range(first, -1, -1):
         # 从下到上，从右到左对每个非叶节点进行调整，循环构建成大顶堆
         big_heap(array, start, len(array) - 1)
@@ -10,7 +11,9 @@ def heap_sort(array):
         array[0], array[end] = array[end], array[0]
         # 重新调整完全二叉树，构造成大顶堆
         big_heap(array, 0, end - 1)
-    return array
+    for i in range(len(array)):
+        dic[array[i]] = i
+    return dic
 
 
 def big_heap(array, start, end):
